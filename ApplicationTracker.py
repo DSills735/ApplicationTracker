@@ -1,5 +1,5 @@
 import sqlite3
-
+import MainMenu
 
 
 class Application:
@@ -17,3 +17,4 @@ c.execute("CREATE TABLE IF NOT EXISTS applications (company TEXT, date_applied T
 conn.commit()
 conn.close()
 
+MainMenu.display_menu()
