@@ -1,6 +1,6 @@
 class ApplicationService:
     
-    def add_application(self, application):
+    def add_application(self):
         company = input("Enter the company name: ")
 
    

@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c4d006a1-44e0-4c87-a37c-bf575e02e090</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ApplicationTracker.py</StartupFile>
+    <StartupFile>Main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ApplicationService.py" />
-    <Compile Include="ApplicationTracker.py" />
+    <Compile Include="Main.py" />
     <Compile Include="MainMenu.py" />
     <Compile Include="Validation.py" />
   </ItemGroup>

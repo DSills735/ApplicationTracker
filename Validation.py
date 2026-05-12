@@ -4,5 +4,5 @@ class Validation:
         if name is None or name.strip() == "":
             raise ValueError("Company name cannot be empty.")
         return False
-    
+     
 
