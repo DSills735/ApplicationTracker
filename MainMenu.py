@@ -28,6 +28,7 @@ class MainMenu:
             case '1':
                 appService = ApplicationService.ApplicationService()
                 appService.add_application()
+                
             case '2':
                 self.view_all_applications()
             case '3':

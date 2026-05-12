@@ -1,6 +1,13 @@
+
 class ApplicationService:
     
     def add_application(self):
+       
+        def welcome_message(self):
+            print("Welcome to the application creator menu. If at any point you wish to exit, press 0.\n")
+        
+        welcome_message(self)
+
         company = input("Enter the company name: ")
 
    
@@ -16,3 +23,7 @@ class ApplicationService:
                   (application.company, application.date_applied, application.status_if_known, application.position, application.notes))
         conn.commit()
         conn.close()
+
+
+        def welcome_message(self):
+            print("Welcome to the application creator menu. If at any point you wish to exit, press 0.")
