@@ -3,9 +3,9 @@ import Helpers
 from datetime import datetime 
 class Validation:
 
-    def name_validation(self, name):
+    def string_validation(self, name):
         if name is None or name.strip() == "":
-            print("Company name cannot be empty.")
+            print("Input cannot be empty.")
             return False
         elif name == "0":
             print("Exiting the application creator menu. Returning to main menu.")
@@ -27,3 +27,13 @@ class Validation:
             print("Invalid date format. Please enter the date in DD-MM-YYYY format.")
             return False
 
+    def status_validation(self, status):
+        if status is None or status.strip() == "":
+            print("Status cannot be empty.")
+            return False
+        elif status == "0":
+            print("Exiting the application creator menu. Returning to main menu.")
+            Helpers.Helpers().Clear()
+            MainMenu.MainMenu().display_menu()
+            return True
+        return True

@@ -1,5 +1,7 @@
 import Validation
 import Helpers
+import Main
+import sqlite3
 
 class ApplicationService:
     
@@ -13,7 +15,7 @@ class ApplicationService:
         company = input("Enter the company name: ")
 
         while(not valid):
-            valid = Validation.Validation().name_validation(company)
+            valid = Validation.Validation().string_validation(company)
             if not valid:
                 company = input("Enter the company name: ")
         
@@ -31,8 +33,31 @@ class ApplicationService:
 
 
         status_if_known = input("Enter the application status (if known): ")
+
+        while (not valid):
+                valid = Validation.Validation().string_validation(status_if_known)
+                if not valid:
+                    status_if_known = input("Enter the application status (if known): ")
+        valid = False
+        Helpers.Helpers().Clear()
+
         position = input("Enter the position applied for: ")
+
+        while(not valid):
+            valid = Validation.Validation().string_validation(position)
+            if not valid:
+                position = input("Enter the position applied for: ")
+        valid = False
+        Helpers.Helpers().Clear()
+
         notes = input("Enter any additional notes: ")
+        while(not valid):
+            valid = Validation.Validation().string_validation(notes)
+            if not valid:
+                notes = input("Enter any additional notes: ")
+
+        Helpers.Helpers().Clear()
+
         application = Application(company, date_applied, status_if_known, position, notes)
         conn = sqlite3.connect('applications.db')
         c = conn.cursor()
