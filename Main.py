@@ -24,7 +24,7 @@ def init_db():
             notes TEXT
         )
     """)
-    #c.execute("CREATE TABLE IF NOT EXISTS ClosedApplications( company TEXT, position TEXT, notes TEXT)")
+
     conn.commit()
     conn.close()
 
