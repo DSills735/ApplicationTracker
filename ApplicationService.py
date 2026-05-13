@@ -1,4 +1,5 @@
 import Validation
+import Helpers
 
 class ApplicationService:
     
@@ -17,7 +18,17 @@ class ApplicationService:
                 company = input("Enter the company name: ")
         
         valid = False
+        Helpers.Helpers().Clear()
         date_applied = input("Enter the date applied (YYYY-MM-DD): ")
+
+        while (not valid):
+            valid = Validation.Validation().date_validation(date_applied)
+            if not valid:
+                date_applied = input("Enter the date applied (YYYY-MM-DD): ")
+
+        valid = False
+        Helpers.Helpers().Clear()
+
 
         status_if_known = input("Enter the application status (if known): ")
         position = input("Enter the position applied for: ")
