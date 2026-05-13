@@ -3,7 +3,8 @@ import MainMenu
 
 
 class Application:
-      def __init__(self, company, date_applied, status_if_known, position, notes):
+      def __init__(self, id, company, date_applied, status_if_known, position, notes):
+           self.id = id
            self.company = company
            self.date_applied = date_applied
            self.status_if_known = status_if_known
@@ -15,6 +16,7 @@ def init_db():
     c = conn.cursor()
     c.execute("""
         CREATE TABLE IF NOT EXISTS applications (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
             company TEXT, 
             date_applied TEXT, 
             status_if_known TEXT, 

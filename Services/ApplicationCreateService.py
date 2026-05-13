@@ -3,7 +3,7 @@ import Helpers
 import Main
 import sqlite3
 
-class ApplicationService:
+class ApplicationCreateService:
     
     def add_application(self):
        
@@ -58,7 +58,7 @@ class ApplicationService:
 
         Helpers.Helpers().Clear()
 
-        application = Main.Main().Application(company, date_applied, status_if_known, position, notes)
+        application = Main.Application(None, company, date_applied, status_if_known, position, notes)
         conn = sqlite3.connect('applications.db')
         c = conn.cursor()
         c.execute("INSERT INTO applications (company, date_applied, status_if_known, position, notes) VALUES (?, ?, ?, ?, ?)",

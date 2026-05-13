@@ -1,4 +1,6 @@
-import ApplicationService
+from Services import ApplicationViewService
+from Services import ApplicationCreateService
+
 
 class MainMenu:
     def __init__(self):
@@ -26,11 +28,13 @@ class MainMenu:
     def execute_choice(self, choice):
         match choice:
             case '1':
-                appService = ApplicationService.ApplicationService()
+                appService = ApplicationCreateService.ApplicationCreateService()
                 appService.add_application()
                 
             case '2':
-                self.view_all_applications()
+                appViewService = ApplicationViewService.ApplicationViewService()
+                appViewService.ViewApplications()
+
             case '3':
                 self.view_open_applications()
             case '4':
