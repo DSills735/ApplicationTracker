@@ -58,7 +58,7 @@ class ApplicationService:
 
         Helpers.Helpers().Clear()
 
-        application = Application(company, date_applied, status_if_known, position, notes)
+        application = Main.Main().Application(company, date_applied, status_if_known, position, notes)
         conn = sqlite3.connect('applications.db')
         c = conn.cursor()
         c.execute("INSERT INTO applications (company, date_applied, status_if_known, position, notes) VALUES (?, ?, ?, ?, ?)",
@@ -66,6 +66,7 @@ class ApplicationService:
         conn.commit()
         conn.close()
 
+        print("Application added successfully!")
 
         def welcome_message(self):
             print("Welcome to the application creator menu. If at any point you wish to exit, press 0.")
