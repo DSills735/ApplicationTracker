@@ -1,5 +1,6 @@
 from Services import ApplicationViewService
 from Services import ApplicationCreateService
+from Services import ApplicationUpdateService
 import Helpers
 
 
@@ -42,7 +43,8 @@ class MainMenu:
                 appViewService = ApplicationViewService.ApplicationViewService()
                 appViewService.ViewOpenApplications(open = True)
             case '4':
-                self.update_application_status()
+                appUpdateService = ApplicationUpdateService.ApplicationUpdateService()
+                appUpdateService.UpdateApplication()
             case '5':
                 self.delete_application()
             case '6':
