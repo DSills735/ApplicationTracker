@@ -1,5 +1,6 @@
 from Services import ApplicationViewService
 from Services import ApplicationCreateService
+import Helpers
 
 
 class MainMenu:
@@ -8,6 +9,7 @@ class MainMenu:
 
     def display_menu(self):
         while True:
+            Helpers.Helpers().Clear()
             print("\nPlease select an option:")
             print("1. Add Application")
             print("2. View all Applications")
@@ -34,10 +36,11 @@ class MainMenu:
                 
             case '2':
                 appViewService = ApplicationViewService.ApplicationViewService()
-                appViewService.ViewApplications()
+                appViewService.ViewApplications(open = True)
 
             case '3':
-                self.view_open_applications()
+                appViewService = ApplicationViewService.ApplicationViewService()
+                appViewService.ViewOpenApplications(open = True)
             case '4':
                 self.update_application_status()
             case '5':
