@@ -21,12 +21,12 @@ class ApplicationCreateService:
         
         valid = False
         Helpers.Helpers().Clear()
-        date_applied = input("Enter the date applied (YYYY-MM-DD): ")
+        date_applied = input("Enter the date applied (DD-MM-YYYY): ")
 
         while (not valid):
             valid = Validation.Validation().date_validation(date_applied)
             if not valid:
-                date_applied = input("Enter the date applied (YYYY-MM-DD): ")
+                date_applied = input("Enter the date applied (DD-MM-YYYY): ")
 
         valid = False
         Helpers.Helpers().Clear()
@@ -50,11 +50,11 @@ class ApplicationCreateService:
         valid = False
         Helpers.Helpers().Clear()
 
-        notes = input("Enter any additional notes: ")
+        notes = input("Enter any additional notes: (Enter N/A if none) ")
         while(not valid):
             valid = Validation.Validation().string_validation(notes)
             if not valid:
-                notes = input("Enter any additional notes: ")
+                notes = input("Enter any additional notes: (Enter N/A if none) ")
 
         Helpers.Helpers().Clear()
 

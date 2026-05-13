@@ -7,16 +7,17 @@ class MainMenu:
         print("Welcome to the Main Menu!")
 
     def display_menu(self):
-        print("\nPlease select an option:")
-        print("1. Add Application")
-        print("2. View all Applications")
-        print("3. View Open Applications")
-        print("4. Update Application Status")
-        print("5. Delete Application")
-        print("6. Exit")
+        while True:
+            print("\nPlease select an option:")
+            print("1. Add Application")
+            print("2. View all Applications")
+            print("3. View Open Applications")
+            print("4. Update Application Status")
+            print("5. Delete Application")
+            print("6. Exit")
         
-        choice = self.get_user_choice()
-        self.execute_choice(choice)
+            choice = self.get_user_choice()
+            self.execute_choice(choice)
 
     def get_user_choice(self):
         while True:
