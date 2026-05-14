@@ -1,6 +1,7 @@
 from Services import ApplicationViewService
 from Services import ApplicationCreateService
 from Services import ApplicationUpdateService
+from Services import ApplicationDeleteService
 import Helpers
 
 
@@ -46,7 +47,9 @@ class MainMenu:
                 appUpdateService = ApplicationUpdateService.ApplicationUpdateService()
                 appUpdateService.UpdateApplication()
             case '5':
-                self.delete_application()
+                appDeleteService = ApplicationDeleteService.ApplicationDeleteService()
+                appDeleteService.DeleteApplication()
+
             case '6':
                 print("Exiting the application. Goodbye!")
                 exit()

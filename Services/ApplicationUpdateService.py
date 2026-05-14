@@ -2,6 +2,7 @@ from email.mime import application
 import sqlite3
 from turtle import update
 import Helpers
+import MainMenu
 
 from Services.ApplicationViewService import ApplicationViewService
 
@@ -22,6 +23,7 @@ class ApplicationUpdateService:
         print ("3. Status if Known")
         print ("4. Position")
         print ("5. Notes")
+        print ("6. Exit")
 
         choice = input("Enter your choice (1-5): ")
 
@@ -45,6 +47,9 @@ class ApplicationUpdateService:
             new_notes = input("Enter the new notes: ")
             c.execute("UPDATE applications SET notes = ? WHERE id = ?", (new_notes, num))
 
+        elif choice == '6':
+            print("Exiting update menu.")
+            MainMenu.MainMenu().display_menu()
         else:
             print("Invalid choice. Please try again.")
             self.validInput = False
@@ -53,6 +58,8 @@ class ApplicationUpdateService:
         conn.close()
 
     if not validInput:
+        Helpers.Helpers().Clear()
+        print("Invalid input. Please try again.")
         UpdateApplication();
 
 

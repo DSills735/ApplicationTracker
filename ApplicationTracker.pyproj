@@ -27,6 +27,7 @@
     <Compile Include="MainMenu.py" />
     <Compile Include="Services\ApplicationUpdateService.py" />
     <Compile Include="Services\ApplicationViewService.py" />
+    <Compile Include="Services\ApplicationDeleteService.py" />
     <Compile Include="Validation.py" />
   </ItemGroup>
   <ItemGroup>
