@@ -6,4 +6,6 @@ a static to a dynamically typed language.
 
 In this application, I used pandas to display a table, but otherwise just created all my own code. 
 
-Database is managed with Sqllite 3. 
+Database is managed with Sqllite 3.
+
+This app was intentionally kept as simple as I could. 
